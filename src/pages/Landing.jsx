@@ -1,12 +1,25 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Calendar, Users, Zap, Clock, AlertCircle, CheckCircle, IndianRupee, X } from 'lucide-react';
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Calendar,
+  Users,
+  Zap,
+  Clock,
+  AlertCircle,
+  CheckCircle,
+  IndianRupee,
+  X
+} from 'lucide-react';
+import RollingGallery from '../components/Rolling-Gallery';
 
 export default function Landing() {
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [showContactModal, setShowContactModal] = useState(false);
-  
-  const phoneNumber = "+91 1234567890"; // Replace with actual number
-  
+
+  const phoneNumber = "+91 9686794687"; // Replace with actual number
+
   const scrollToPackages = () => {
     const packagesSection = document.getElementById('packages-section');
     if (packagesSection) {
@@ -67,7 +80,7 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-center sm:text-left">
-              <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
+              <h1 className="text-3xl sm:text-4xl font-bold  bg-clip-text  text-orange-700">
                 Chaitanya Kalamantap
               </h1>
               <p className="text-sm text-slate-600 mt-1">Ashwathpura ShriRam Seva Sangha (R)</p>
@@ -80,9 +93,12 @@ export default function Landing() {
         </div>
       </header>
 
+      {/* Rolling Gallery */}
+      <RollingGallery autoplay={true} pauseOnHover={true} />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-slate-800 via-slate-700 to-blue-900 text-white py-16 sm:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2djEwaC0yVjE2aDJ6bTQgMHYxMGgtMlYxNmgyem00IDB2MTBoLTJWMTZoMnptLTI0IDB2MTBoLTJWMTZoMnptLTQgMHYxMGgtMlYxNmgyem0tNCAwdjEwaC0yVjE2aDJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-10"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,...')]"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Your Perfect Venue for<br />Every Celebration
@@ -91,15 +107,15 @@ export default function Landing() {
             Premium banquet hall in the heart of Dharwad, perfect for weddings, receptions, and special occasions
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
+            <button
               onClick={scrollToPackages}
-              className="bg-white text-slate-800 px-8 py-4 rounded-lg font-semibold hover:bg-slate-50 transition shadow-xl cursor-pointer text-lg"
+              className="bg-white text-slate-800 px-8 py-4 rounded-lg font-semibold hover:bg-slate-50 transition shadow-xl text-lg"
             >
               View Packages
             </button>
-            <button 
+            <button
               onClick={() => setShowContactModal(true)}
-              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition cursor-pointer text-lg"
+              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition text-lg"
             >
               Contact Us
             </button>
@@ -107,93 +123,16 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Pricing Table */}
+      {/* Packages Section */}
       <section id="packages-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Rental Packages</h2>
           <p className="text-slate-600 text-lg">Effective from 01-11-2025</p>
         </div>
 
-        {/* Desktop Table */}
-        <div className="hidden md:block bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
-          <table className="w-full">
-            <thead>
-              <tr className="bg-gradient-to-r from-slate-700 to-slate-800 text-white">
-                <th className="px-6 py-4 text-left text-sm font-semibold">Program Details</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold">Rental Amount</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold">Deposit</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold">Remarks</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200">
-              <tr className="hover:bg-slate-50 transition">
-                <td className="px-6 py-5">
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">💍</span>
-                    <div>
-                      <div className="font-semibold text-slate-800 text-lg">Marriage</div>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-6 py-5">
-                  <div className="text-2xl font-bold text-slate-800">₹50,000</div>
-                </td>
-                <td className="px-6 py-5">
-                  <div className="text-lg font-semibold text-slate-600">₹5,000</div>
-                </td>
-                <td className="px-6 py-5">
-                  <span className="inline-block bg-rose-100 text-rose-700 px-3 py-1 rounded-full text-sm font-medium">
-                    Dual Marriage: +₹10,000
-                  </span>
-                </td>
-              </tr>
-              <tr className="hover:bg-slate-50 transition">
-                <td className="px-6 py-5">
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">🎉</span>
-                    <div>
-                      <div className="font-semibold text-slate-800 text-lg">Reception / Engagement / Upanayana</div>
-                      <div className="text-sm text-slate-500">One day programs</div>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-6 py-5">
-                  <div className="text-2xl font-bold text-slate-800">₹30,000</div>
-                </td>
-                <td className="px-6 py-5">
-                  <div className="text-lg font-semibold text-slate-600">₹5,000</div>
-                </td>
-                <td className="px-6 py-5">
-                  <span className="text-slate-500">—</span>
-                </td>
-              </tr>
-              <tr className="hover:bg-slate-50 transition">
-                <td className="px-6 py-5">
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">🎂</span>
-                    <div>
-                      <div className="font-semibold text-slate-800 text-lg">Small Functions</div>
-                      <div className="text-sm text-slate-500">Birthday, Kubusa, Naming Ceremony, Anniversary</div>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-6 py-5">
-                  <div className="text-2xl font-bold text-slate-800">₹22,000</div>
-                </td>
-                <td className="px-6 py-5">
-                  <div className="text-lg font-semibold text-slate-600">₹4,000</div>
-                </td>
-                <td className="px-6 py-5">
-                  <span className="text-slate-500">—</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
         {/* Mobile Cards */}
         <div className="md:hidden space-y-4">
-          {packages.map((pkg) => (
+          {packages.map(pkg => (
             <div key={pkg.id} className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
               <div className={`bg-gradient-to-r ${pkg.color} p-4 text-white`}>
                 <div className="flex items-center gap-3">
@@ -224,7 +163,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Additional Charges Table */}
+      {/* Additional Charges */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-slate-50 rounded-3xl">
         <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-8 text-center">Additional Charges</h2>
         <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200">
@@ -260,13 +199,19 @@ export default function Landing() {
         <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-10 text-center">Terms & Conditions</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {conditions.map((condition, index) => {
-            const bgColor = condition.type === 'warning' ? 'bg-amber-50 border-amber-200' : 
-                           condition.type === 'success' ? 'bg-emerald-50 border-emerald-200' : 
-                           'bg-blue-50 border-blue-200';
-            const iconColor = condition.type === 'warning' ? 'text-amber-600' : 
-                             condition.type === 'success' ? 'text-emerald-600' : 
-                             'text-blue-600';
-            
+            const bgColor =
+              condition.type === 'warning'
+                ? 'bg-amber-50 border-amber-200'
+                : condition.type === 'success'
+                ? 'bg-emerald-50 border-emerald-200'
+                : 'bg-blue-50 border-blue-200';
+            const iconColor =
+              condition.type === 'warning'
+                ? 'text-amber-600'
+                : condition.type === 'success'
+                ? 'text-emerald-600'
+                : 'text-blue-600';
+
             return (
               <div key={index} className={`flex items-start gap-4 p-4 rounded-xl border-2 ${bgColor} transition hover:shadow-md`}>
                 <div className={`${iconColor} mt-0.5 flex-shrink-0`}>{condition.icon}</div>
@@ -280,13 +225,13 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Location Section */}
+      {/* Location */}
       <section className="bg-gradient-to-br from-slate-100 to-blue-50 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-10 text-center">Visit Us</h2>
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.0234!2d74.9988!3d15.4602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDI3JzM2LjciTiA3NMKwNTknNTUuNyJF!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18..."
               width="100%"
               height="450"
               style={{ border: 0 }}
@@ -326,30 +271,21 @@ export default function Landing() {
             <h3 className="text-2xl font-bold">Chaitanya Kalamantap</h3>
             <p className="text-slate-400">Ashwathpura ShriRam Seva Sangha (R)</p>
             <p className="text-slate-400">Hubli-Dharwad</p>
-            <div className="pt-6 mt-6">
-              <p className="text-slate-500 text-sm">© 2025 Chaitanya Kalamantap Committee. All rights reserved.</p>
-              <div className="mt-6 pt-6 border-t border-slate-700">
-                <p className="text-slate-500 text-sm">
-                  Coded and maintained by{' '}
-                  <a 
-                    href="https://github.com/KeyurGK" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 transition underline"
-                  >
-                    KeyurGK
-                  </a>
-                  {' '}and{' '}
-                  <a 
-                    href="https://github.com/MayurK-cmd" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 transition underline"
-                  >
-                    MayurK
-                  </a>
-                </p>
-              </div>
+            <div className="pt-6 mt-6 border-t border-slate-700">
+              <p className="text-slate-500 text-sm">
+                © 2025 Chaitanya Kalamantap Committee. All rights reserved.
+              </p>
+              <p className="text-slate-500 text-sm mt-4">
+                Coded and maintained by{' '}
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 transition underline"
+                >
+                  KulkarniAlgo
+                </a>
+              </p>
             </div>
           </div>
         </div>
@@ -357,15 +293,21 @@ export default function Landing() {
 
       {/* Contact Modal */}
       {showContactModal && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4" onClick={() => setShowContactModal(false)}>
-          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-scale" onClick={(e) => e.stopPropagation()}>
-            <button 
+        <div
+          className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
+          onClick={() => setShowContactModal(false)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-scale"
+            onClick={e => e.stopPropagation()}
+          >
+            <button
               onClick={() => setShowContactModal(false)}
               className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition"
             >
               <X className="w-6 h-6" />
             </button>
-            
+
             <div className="text-center mb-6">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-8 h-8 text-blue-600" />
@@ -375,7 +317,7 @@ export default function Landing() {
             </div>
 
             <div className="space-y-4">
-              <a 
+              <a
                 href={`tel:${phoneNumber.replace(/\s/g, '')}`}
                 className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-5 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition shadow-lg text-center text-xl cursor-pointer"
               >
@@ -384,7 +326,7 @@ export default function Landing() {
                   <span>{phoneNumber}</span>
                 </div>
               </a>
-              
+
               <div className="text-center pt-4 border-t border-slate-200">
                 <p className="text-slate-500 text-sm mb-2">Or visit us at</p>
                 <p className="text-slate-700 font-medium">Sarovar Nagar, Dharwad</p>
