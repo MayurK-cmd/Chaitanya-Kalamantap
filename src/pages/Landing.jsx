@@ -236,7 +236,7 @@ export default function Landing() {
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-10 text-center">Visit Us</h2>
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18..."
+              src="https://maps.app.goo.gl/YgZThfKJaUrhrYXPA"
               width="100%"
               height="450"
               style={{ border: 0 }}
