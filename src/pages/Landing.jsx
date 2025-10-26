@@ -413,7 +413,7 @@ export default function Landing() {
               <p className="text-slate-500 text-sm mt-4">
                 Coded and maintained by{' '}
                 <a
-                  href=""
+                  
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-400 hover:text-blue-300 transition underline"
