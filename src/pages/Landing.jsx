@@ -36,7 +36,7 @@ export default function Landing() {
   const [showContactModal, setShowContactModal] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const phoneNumber = "+91 9686794687 "; 
+  const phoneNumber = "+91 86185 24351"; 
 
   const galleryImages = [
     gallery1,
